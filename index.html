@@ -203,9 +203,10 @@
 
     /* Experience Timeline */
     .experience-item {
-      margin-bottom: 2rem;
-      padding-bottom: 2rem;
+      margin-bottom: 2.5rem;
+      padding-bottom: 2.5rem;
       border-bottom: 1px solid var(--border);
+      position: relative;
     }
 
     .experience-item:last-child {
@@ -219,50 +220,58 @@
       justify-content: space-between;
       align-items: flex-start;
       flex-wrap: wrap;
-      margin-bottom: 0.5rem;
+      gap: 0.5rem;
+      margin-bottom: 0.875rem;
     }
 
     .exp-title {
-      font-size: 1.15rem;
-      font-weight: 600;
+      font-size: 1.2rem;
+      font-weight: 700;
       color: var(--primary);
+      letter-spacing: -0.01em;
+      margin-bottom: 0.2rem;
     }
 
     .exp-company {
-      font-size: 1rem;
+      font-size: 1.05rem;
       color: var(--accent);
-      font-weight: 500;
-      margin-bottom: 0.25rem;
+      font-weight: 600;
     }
 
     .exp-date {
-      font-size: 0.875rem;
-      color: var(--text-light);
-      background: #f1f5f9;
-      padding: 0.25rem 0.75rem;
+      font-size: 0.85rem;
+      background: #eff6ff;
+      color: #1e40af;
+      padding: 0.35rem 0.85rem;
       border-radius: 20px;
-      font-weight: 500;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      border: 1px solid #dbeafe;
+      white-space: nowrap;
     }
 
     .exp-details {
       list-style: none;
-      margin-top: 0.75rem;
+      margin-top: 1rem;
     }
 
     .exp-details li {
       position: relative;
-      padding-left: 1.25rem;
-      margin-bottom: 0.5rem;
-      font-size: 0.95rem;
+      padding-left: 1.5rem;
+      margin-bottom: 0.65rem;
+      font-size: 0.975rem;
       color: #475569;
+      line-height: 1.6;
     }
 
     .exp-details li::before {
       content: "•";
       color: var(--accent);
       font-weight: bold;
+      font-size: 1.2rem;
       position: absolute;
       left: 0;
+      top: -0.05rem;
     }
 
     /* Skills Grid */
@@ -427,7 +436,7 @@
   <!-- Header Banner with Profile Picture -->
   <header class="hero-banner">
     <div class="profile-container">
-      <img src="profile.jpg" alt="Hemant Singh">
+      <img src="https://lh3.googleusercontent.com/d/1oDxvMZRhBzgNEvF1uAmZ-hp8L4HsFzFc" alt="Hemant Singh">
     </div>
     <div class="banner-badge">
       <i class="fa-solid fa-shield-halved"></i> Trust & Safety • Policy Operations • Platform Integrity
@@ -442,11 +451,11 @@
     <section id="about" class="card card-about">
       <h2><i class="fa-solid fa-user"></i> About Me</h2>
       <div class="about-text">
-        <p>I’m a Trust & Safety professional with over 8 years of experience working across policy operations, quality assurance, learning and development, and cross-vendor collaboration within the digital platform industry[cite: 1, 2].</p>
+        <p>I’m a Trust & Safety professional with over 8 years of experience working across policy operations, quality assurance, learning and development, and cross-vendor collaboration within the digital platform industry.</p>
         
-        <p>Over the years, my work has focused on helping teams understand and apply complex policies, improving decision-making quality, and supporting safer online environments. Working on projects associated with major technology platforms, including Google/YouTube, has given me practical insight into the challenges of content moderation, policy enforcement, and maintaining consistency across large-scale operations[cite: 1, 2].</p>
+        <p>Over the years, my work has focused on helping teams understand and apply complex policies, improving decision-making quality, and supporting safer online environments. Working on projects associated with major technology platforms, including Google/YouTube, has given me practical insight into the challenges of content moderation, policy enforcement, and maintaining consistency across large-scale operations.</p>
         
-        <p>In my current role as a Senior Trainer, I work at the intersection of policy, people, and performance[cite: 2]. My experience includes delivering training across vendors, supporting quality improvement initiatives, contributing policy feedback for AI-assisted moderation, and translating complex policy requirements into practical guidance that teams can apply in real-world scenarios[cite: 2]. I enjoy looking beyond individual decisions to understand the underlying gaps, identify opportunities for improvement, and build solutions that create a lasting impact.</p>
+        <p>In my current role as a Senior Trainer, I work at the intersection of policy, people, and performance. My experience includes delivering training across vendors, supporting quality improvement initiatives, contributing policy feedback for AI-assisted moderation, and translating complex policy requirements into practical guidance that teams can apply in real-world scenarios. I enjoy looking beyond individual decisions to understand the underlying gaps, identify opportunities for improvement, and build solutions that create a lasting impact.</p>
         
         <p>What interests me most about this field is how policy, human judgement, technology, and risk management come together. As digital platforms evolve and AI becomes increasingly integrated into moderation workflows, I believe there is a growing need for professionals who understand both the operational realities and the principles behind effective policy enforcement.</p>
         
@@ -466,16 +475,18 @@
       <div class="experience-item">
         <div class="exp-header">
           <div>
-            <div class="exp-title">Policy Trainer</div>
+            <div class="exp-title">Senior Trainer Trust & Safety Policy</div>
             <div class="exp-company">Concentrix Malaysia</div>
           </div>
-          <span class="exp-date">July 2023 – Present</span>
+          <span class="exp-date">07/2023 – Present | Malaysia</span>
         </div>
         <ul class="exp-details">
-          <li>Led training design and delivery for Trust & Safety moderation teams across platforms (image, video, text) supporting YouTube's Adult and Child Safety programs[cite: 2].</li>
-          <li>Implemented customized coaching and upskilling plans that improved moderation quality and reduced ramp-up time by 20%[cite: 2].</li>
-          <li>Collaborated with global policy teams to ensure alignment with latest guidelines and legal updates[cite: 2].</li>
-          <li>Created assessment frameworks to measure trainee progress and policy comprehension while delivering SLA-targeted sessions[cite: 2].</li>
+          <li>Lead policy capability and quality initiatives for a 280+ HC Trust & Safety operation, covering image, video, and text moderation workflows.</li>
+          <li>Drive targeted coaching and upskilling interventions based on quality trends, policy gaps, and Root Cause Analysis (RCA), contributing to a 10% quality improvement within one quarter for new-hire cohorts.</li>
+          <li>Provide policy and workflow feedback for AI moderation, identifying operational gaps and recommending improvements to policy application and guidance.</li>
+          <li>Deliver cross-vendor policy alignment and knowledge-sharing initiatives, strengthening consistency in policy interpretation and operational execution.</li>
+          <li>Partner with global policy teams and client stakeholders on policy updates, workflow changes, quality trends, and performance improvement initiatives.</li>
+          <li>Optimized training assessments and readiness processes, achieving 99% training throughput while minimizing repeat assessments and associated operational costs.</li>
         </ul>
       </div>
 
@@ -486,13 +497,13 @@
             <div class="exp-title">Content Reviewer</div>
             <div class="exp-company">Concentrix Malaysia</div>
           </div>
-          <span class="exp-date">Jan 2022 – Jun 2023</span>
+          <span class="exp-date">01/2022 – 06/2023</span>
         </div>
         <ul class="exp-details">
-          <li>Reviewed sensitive and complex YouTube content for community safety, flagging policy violations accurately[cite: 2].</li>
-          <li>Played a key role in flagging edge cases and updating training materials for new policy changes[cite: 2].</li>
-          <li>Maintained >98% quality score consistently while handling high-volume queues[cite: 2].</li>
-          <li>Supported team leaders in workflow enhancements and SOP clarifications[cite: 2].</li>
+          <li>Reviewed sensitive and complex YouTube content for community safety, flagging policy violations accurately.</li>
+          <li>Played a key role in flagging edge cases and updating training materials for new policy changes.</li>
+          <li>Maintained >99% quality score consistently while handling high-volume queues.</li>
+          <li>Supported team leaders in workflow enhancements and SOP clarifications.</li>
         </ul>
       </div>
 
@@ -501,14 +512,14 @@
         <div class="exp-header">
           <div>
             <div class="exp-title">Content Reviewer</div>
-            <div class="exp-company">ByteDance India Pvt Ltd</div>
+            <div class="exp-company">Bytedance India Pvt Ltd</div>
           </div>
-          <span class="exp-date">Jun 2020 – Dec 2021</span>
+          <span class="exp-date">06/2020 – 12/2021</span>
         </div>
         <ul class="exp-details">
-          <li>Evaluated TikTok videos based on evolving guidelines to ensure platform safety and compliance[cite: 2].</li>
-          <li>Provided feedback to training teams, suggesting improvements in clarity of policy documentation[cite: 2].</li>
-          <li>Conducted peer coaching and shadowing sessions for new hires[cite: 2].</li>
+          <li>Evaluated TikTok videos based on evolving guidelines to ensure platform safety and compliance.</li>
+          <li>Provided feedback to training teams, suggesting improvements in clarity of policy documentation.</li>
+          <li>Conducted peer coaching and shadowing sessions for new hires.</li>
         </ul>
       </div>
 
@@ -516,16 +527,13 @@
       <div class="experience-item">
         <div class="exp-header">
           <div>
-            <div class="exp-title">Content Reviewer</div>
-            <div class="exp-company">Concentrix Daksh Services Pvt Ltd (Google Process)</div>
+            <div class="exp-title">Content reviewer specialist</div>
+            <div class="exp-company">Concentrix Daksh Services Pvt Ltd</div>
           </div>
-          <span class="exp-date">Feb 2018 – Dec 2019</span>
+          <span class="exp-date">02/2018 – 12/2019</span>
         </div>
         <ul class="exp-details">
-          <li>Review YouTube comments for quality based on YouTube policy Guidelines[cite: 1, 2].</li>
-          <li>Approve or disapprove new and changed ad submissions based on policy guidelines[cite: 1, 2].</li>
-          <li>Contributed to a 20% reduction in ticket backlog by initiating workflow changes with the team lead[cite: 2].</li>
-          <li>Awarded for "Consistent Accuracy" for maintaining high-quality decisions[cite: 2].</li>
+          <li>Performed daily moderation of user-generated content while adhering to tight SLAs.</li>
         </ul>
       </div>
     </section>
