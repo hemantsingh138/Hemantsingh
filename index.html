@@ -26,11 +26,64 @@
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       background-color: var(--bg);
       color: var(--text);
       line-height: 1.6;
+      padding-top: 60px; /* Space for sticky nav */
+    }
+
+    /* Sticky Navigation Header */
+    .sticky-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(8px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.8rem 2rem;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-logo {
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .nav-logo i {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #cbd5e1;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: #ffffff;
     }
 
     /* Hero Banner & Profile Image */
@@ -113,6 +166,7 @@
       margin-bottom: 2rem;
       box-shadow: var(--shadow);
       border: 1px solid var(--border);
+      scroll-margin-top: 80px;
     }
 
     .card-about {
@@ -178,7 +232,7 @@
       font-size: 1rem;
       color: var(--accent);
       font-weight: 500;
-      margin-bottom: 0.25srem;
+      margin-bottom: 0.25rem;
     }
 
     .exp-date {
@@ -268,6 +322,7 @@
       text-align: center;
       margin-bottom: 2rem;
       box-shadow: var(--shadow);
+      scroll-margin-top: 80px;
     }
 
     .mission-quote i.quote-icon {
@@ -295,7 +350,7 @@
     .contact-links {
       display: flex;
       justify-content: center;
-      gap: 1.5rem;
+      gap: 1rem;
       margin-top: 1.5rem;
       flex-wrap: wrap;
     }
@@ -304,7 +359,7 @@
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      padding: 0.75rem 1.5rem;
+      padding: 0.75rem 1.25rem;
       border-radius: 8px;
       font-weight: 500;
       text-decoration: none;
@@ -319,6 +374,17 @@
 
     .btn-primary:hover {
       background-color: var(--accent-hover);
+    }
+
+    .btn-outline {
+      border: 1px solid var(--border);
+      color: var(--text);
+      background-color: white;
+    }
+
+    .btn-outline:hover {
+      background-color: var(--bg);
+      border-color: #cbd5e1;
     }
 
     footer {
@@ -338,10 +404,25 @@
       .skills-grid {
         grid-template-columns: 1fr;
       }
+      .nav-links {
+        display: none;
+      }
     }
   </style>
 </head>
 <body>
+
+  <!-- Sticky Quick Navigation Bar -->
+  <nav class="sticky-nav">
+    <a href="#" class="nav-logo"><i class="fa-solid fa-shield-halved"></i> Hemant Singh</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#mission">Mission</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
   <!-- Header Banner with Profile Picture -->
   <header class="hero-banner">
@@ -352,20 +433,20 @@
       <i class="fa-solid fa-shield-halved"></i> Trust & Safety • Policy Operations • Platform Integrity
     </div>
     <h1>Hemant Singh</h1>
-    <p>Senior Trainer & Operations Specialist with 8+ years of experience across Policy Operations, QA, AI Moderation Feedback, and Compliance.</p>
+    <p>Senior Trainer & Operations Specialist in Policy Operations, QA, AI Moderation Feedback, and Compliance.</p>
   </header>
 
   <main class="container">
     
     <!-- About Me Section -->
-    <section class="card card-about">
+    <section id="about" class="card card-about">
       <h2><i class="fa-solid fa-user"></i> About Me</h2>
       <div class="about-text">
-        <p>I’m a Trust & Safety professional with over 8 years of experience working across policy operations, quality assurance, learning and development, and cross-vendor collaboration within the digital platform industry.</p>
+        <p>I’m a Trust & Safety professional with over 8 years of experience working across policy operations, quality assurance, learning and development, and cross-vendor collaboration within the digital platform industry[cite: 1, 2].</p>
         
-        <p>Over the years, my work has focused on helping teams understand and apply complex policies, improving decision-making quality, and supporting safer online environments. Working on projects associated with major technology platforms, including Google/YouTube, has given me practical insight into the challenges of content moderation, policy enforcement, and maintaining consistency across large-scale operations.</p>
+        <p>Over the years, my work has focused on helping teams understand and apply complex policies, improving decision-making quality, and supporting safer online environments. Working on projects associated with major technology platforms, including Google/YouTube, has given me practical insight into the challenges of content moderation, policy enforcement, and maintaining consistency across large-scale operations[cite: 1, 2].</p>
         
-        <p>In my current role as a Senior Trainer, I work at the intersection of policy, people, and performance. My experience includes delivering training across vendors, supporting quality improvement initiatives, contributing policy feedback for AI-assisted moderation, and translating complex policy requirements into practical guidance that teams can apply in real-world scenarios. I enjoy looking beyond individual decisions to understand the underlying gaps, identify opportunities for improvement, and build solutions that create a lasting impact.</p>
+        <p>In my current role as a Senior Trainer, I work at the intersection of policy, people, and performance[cite: 2]. My experience includes delivering training across vendors, supporting quality improvement initiatives, contributing policy feedback for AI-assisted moderation, and translating complex policy requirements into practical guidance that teams can apply in real-world scenarios[cite: 2]. I enjoy looking beyond individual decisions to understand the underlying gaps, identify opportunities for improvement, and build solutions that create a lasting impact.</p>
         
         <p>What interests me most about this field is how policy, human judgement, technology, and risk management come together. As digital platforms evolve and AI becomes increasingly integrated into moderation workflows, I believe there is a growing need for professionals who understand both the operational realities and the principles behind effective policy enforcement.</p>
         
@@ -378,23 +459,23 @@
     </section>
 
     <!-- Work Experience Section -->
-    <section class="card">
+    <section id="experience" class="card">
       <h2><i class="fa-solid fa-briefcase"></i> Work Experience</h2>
       
       <!-- Experience 1 -->
       <div class="experience-item">
         <div class="exp-header">
           <div>
-            <div class="exp-title">Senior Policy Trainer</div>
-            <div class="exp-company">Concentrix (Trust & Safety Sector)</div>
+            <div class="exp-title">Policy Trainer</div>
+            <div class="exp-company">Concentrix Malaysia</div>
           </div>
-          <span class="exp-date">Present</span>
+          <span class="exp-date">July 2023 – Present</span>
         </div>
         <ul class="exp-details">
-          <li>Lead policy training and onboarding for Trust & Safety operations across vendors, ensuring accurate knowledge transfer and operational alignment.</li>
-          <li>Translate complex policy requirements into practical, actionable guidance and training modules for operational teams.</li>
-          <li>Collaborate on quality improvement initiatives, feedback loops for AI-assisted moderation, and training needs analysis (TNA).</li>
-          <li>Drive alignment on policy interpretation, edge-case analysis, and consistency across escalation workflows.</li>
+          <li>Led training design and delivery for Trust & Safety moderation teams across platforms (image, video, text) supporting YouTube's Adult and Child Safety programs[cite: 2].</li>
+          <li>Implemented customized coaching and upskilling plans that improved moderation quality and reduced ramp-up time by 20%[cite: 2].</li>
+          <li>Collaborated with global policy teams to ensure alignment with latest guidelines and legal updates[cite: 2].</li>
+          <li>Created assessment frameworks to measure trainee progress and policy comprehension while delivering SLA-targeted sessions[cite: 2].</li>
         </ul>
       </div>
 
@@ -402,21 +483,55 @@
       <div class="experience-item">
         <div class="exp-header">
           <div>
-            <div class="exp-title">Trust & Safety Operations & Quality Assurance Experience</div>
-            <div class="exp-company">Digital Platform Ecosystems (8+ Years Experience)</div>
+            <div class="exp-title">Content Reviewer</div>
+            <div class="exp-company">Concentrix Malaysia</div>
           </div>
-          <span class="exp-date">2018 - Present</span>
+          <span class="exp-date">Jan 2022 – Jun 2023</span>
         </div>
         <ul class="exp-details">
-          <li>Extensive background in content moderation, risk assessment, policy enforcement, and handling sensitive safety queues (Tier X workflows).</li>
-          <li>Conducted rigorous Quality Assurance (QA) evaluations, root cause analysis (RCA), and error pattern identification to drive decision accuracy.</li>
-          <li>Partnered with cross-functional stakeholders to manage policy updates, calibration sessions, and service level agreement (SLA) metrics.</li>
+          <li>Reviewed sensitive and complex YouTube content for community safety, flagging policy violations accurately[cite: 2].</li>
+          <li>Played a key role in flagging edge cases and updating training materials for new policy changes[cite: 2].</li>
+          <li>Maintained >98% quality score consistently while handling high-volume queues[cite: 2].</li>
+          <li>Supported team leaders in workflow enhancements and SOP clarifications[cite: 2].</li>
+        </ul>
+      </div>
+
+      <!-- Experience 3 -->
+      <div class="experience-item">
+        <div class="exp-header">
+          <div>
+            <div class="exp-title">Content Reviewer</div>
+            <div class="exp-company">ByteDance India Pvt Ltd</div>
+          </div>
+          <span class="exp-date">Jun 2020 – Dec 2021</span>
+        </div>
+        <ul class="exp-details">
+          <li>Evaluated TikTok videos based on evolving guidelines to ensure platform safety and compliance[cite: 2].</li>
+          <li>Provided feedback to training teams, suggesting improvements in clarity of policy documentation[cite: 2].</li>
+          <li>Conducted peer coaching and shadowing sessions for new hires[cite: 2].</li>
+        </ul>
+      </div>
+
+      <!-- Experience 4 -->
+      <div class="experience-item">
+        <div class="exp-header">
+          <div>
+            <div class="exp-title">Content Reviewer</div>
+            <div class="exp-company">Concentrix Daksh Services Pvt Ltd (Google Process)</div>
+          </div>
+          <span class="exp-date">Feb 2018 – Dec 2019</span>
+        </div>
+        <ul class="exp-details">
+          <li>Review YouTube comments for quality based on YouTube policy Guidelines[cite: 1, 2].</li>
+          <li>Approve or disapprove new and changed ad submissions based on policy guidelines[cite: 1, 2].</li>
+          <li>Contributed to a 20% reduction in ticket backlog by initiating workflow changes with the team lead[cite: 2].</li>
+          <li>Awarded for "Consistent Accuracy" for maintaining high-quality decisions[cite: 2].</li>
         </ul>
       </div>
     </section>
 
     <!-- Skills & Expertise Section -->
-    <section class="card">
+    <section id="skills" class="card">
       <h2><i class="fa-solid fa-layer-group"></i> Skills & Expertise</h2>
       <div class="skills-grid">
         
@@ -540,7 +655,7 @@
     </section>
 
     <!-- Safety Mission Statement / Quote -->
-    <section class="mission-quote">
+    <section id="mission" class="mission-quote">
       <i class="fa-solid fa-quote-left quote-icon"></i>
       <blockquote>
         "Safeguarding the digital ecosystem is a shared responsibility. By actively identifying risks, addressing policy violations, and championing accountability, we can build a safer, more resilient internet for everyone."
@@ -548,12 +663,18 @@
     </section>
 
     <!-- Contact Section -->
-    <section class="card contact-card">
+    <section id="contact" class="card contact-card">
       <h2><i class="fa-solid fa-paper-plane"></i> Let's Connect</h2>
-      <p>I am always interested in discussing Trust & Safety, policy operations, governance, and compliance. Feel free to connect or reach out!</p>
+      <p>I am always interested in discussing Trust & Safety, policy operations, governance, and compliance. Feel free to reach out or connect!</p>
       <div class="contact-links">
-        <a href="https://linkedin.com" target="_blank" class="btn btn-primary">
-          <i class="fa-brands fa-linkedin"></i> Connect on LinkedIn
+        <a href="mailto:Hemant.singh138@gmail.com" class="btn btn-primary">
+          <i class="fa-solid fa-envelope"></i> Hemant.singh138@gmail.com
+        </a>
+        <a href="tel:+601136609546" class="btn btn-outline">
+          <i class="fa-solid fa-phone"></i> +60 1136609546
+        </a>
+        <a href="https://linkedin.com" target="_blank" class="btn btn-outline">
+          <i class="fa-brands fa-linkedin"></i> LinkedIn
         </a>
       </div>
     </section>
