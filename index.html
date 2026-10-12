@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trust & Safety Professional Portfolio</title>
+  <title>Hemant Singh - Trust & Safety Professional Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
@@ -33,11 +33,11 @@
       line-height: 1.6;
     }
 
-    /* Banner & Header */
+    /* Hero Banner & Profile Image */
     .hero-banner {
       background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #1e3a8a 100%);
       color: #ffffff;
-      padding: 4rem 2rem 5rem 2rem;
+      padding: 4rem 2rem 6rem 2rem;
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -52,6 +52,22 @@
       pointer-events: none;
     }
 
+    .profile-container {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto 1.25rem auto;
+      border: 4px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    }
+
+    .profile-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
     .banner-badge {
       display: inline-flex;
       align-items: center;
@@ -63,19 +79,19 @@
       font-size: 0.85rem;
       font-weight: 500;
       color: #93c5fd;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
       border: 1px solid rgba(255, 255, 255, 0.15);
     }
 
     .hero-banner h1 {
-      font-size: 2.75rem;
+      font-size: 2.5rem;
       font-weight: 700;
       margin-bottom: 0.5rem;
       letter-spacing: -0.025em;
     }
 
     .hero-banner p {
-      font-size: 1.2rem;
+      font-size: 1.15rem;
       color: #cbd5e1;
       max-width: 650px;
       margin: 0 auto;
@@ -129,6 +145,70 @@
 
     .about-text p:last-child {
       margin-bottom: 0;
+    }
+
+    /* Experience Timeline */
+    .experience-item {
+      margin-bottom: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .experience-item:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      margin-bottom: 0.5rem;
+    }
+
+    .exp-title {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .exp-company {
+      font-size: 1rem;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 0.25srem;
+    }
+
+    .exp-date {
+      font-size: 0.875rem;
+      color: var(--text-light);
+      background: #f1f5f9;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-weight: 500;
+    }
+
+    .exp-details {
+      list-style: none;
+      margin-top: 0.75rem;
+    }
+
+    .exp-details li {
+      position: relative;
+      padding-left: 1.25rem;
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+      color: #475569;
+    }
+
+    .exp-details li::before {
+      content: "•";
+      color: var(--accent);
+      font-weight: bold;
+      position: absolute;
+      left: 0;
     }
 
     /* Skills Grid */
@@ -188,7 +268,6 @@
       text-align: center;
       margin-bottom: 2rem;
       box-shadow: var(--shadow);
-      position: relative;
     }
 
     .mission-quote i.quote-icon {
@@ -242,17 +321,6 @@
       background-color: var(--accent-hover);
     }
 
-    .btn-outline {
-      border: 1px solid var(--border);
-      color: var(--text);
-      background-color: white;
-    }
-
-    .btn-outline:hover {
-      background-color: var(--bg);
-      border-color: #cbd5e1;
-    }
-
     footer {
       text-align: center;
       padding: 2rem 0;
@@ -275,12 +343,15 @@
 </head>
 <body>
 
-  <!-- Trust & Safety Banner -->
+  <!-- Header Banner with Profile Picture -->
   <header class="hero-banner">
+    <div class="profile-container">
+      <img src="profile.jpg" alt="Hemant Singh">
+    </div>
     <div class="banner-badge">
       <i class="fa-solid fa-shield-halved"></i> Trust & Safety • Policy Operations • Platform Integrity
     </div>
-    <h1>Trust & Safety Professional</h1>
+    <h1>Hemant Singh</h1>
     <p>Senior Trainer & Operations Specialist with 8+ years of experience across Policy Operations, QA, AI Moderation Feedback, and Compliance.</p>
   </header>
 
@@ -306,12 +377,49 @@
       </div>
     </section>
 
+    <!-- Work Experience Section -->
+    <section class="card">
+      <h2><i class="fa-solid fa-briefcase"></i> Work Experience</h2>
+      
+      <!-- Experience 1 -->
+      <div class="experience-item">
+        <div class="exp-header">
+          <div>
+            <div class="exp-title">Senior Policy Trainer</div>
+            <div class="exp-company">Concentrix (Trust & Safety Sector)</div>
+          </div>
+          <span class="exp-date">Present</span>
+        </div>
+        <ul class="exp-details">
+          <li>Lead policy training and onboarding for Trust & Safety operations across vendors, ensuring accurate knowledge transfer and operational alignment.</li>
+          <li>Translate complex policy requirements into practical, actionable guidance and training modules for operational teams.</li>
+          <li>Collaborate on quality improvement initiatives, feedback loops for AI-assisted moderation, and training needs analysis (TNA).</li>
+          <li>Drive alignment on policy interpretation, edge-case analysis, and consistency across escalation workflows.</li>
+        </ul>
+      </div>
+
+      <!-- Experience 2 -->
+      <div class="experience-item">
+        <div class="exp-header">
+          <div>
+            <div class="exp-title">Trust & Safety Operations & Quality Assurance Experience</div>
+            <div class="exp-company">Digital Platform Ecosystems (8+ Years Experience)</div>
+          </div>
+          <span class="exp-date">2018 - Present</span>
+        </div>
+        <ul class="exp-details">
+          <li>Extensive background in content moderation, risk assessment, policy enforcement, and handling sensitive safety queues (Tier X workflows).</li>
+          <li>Conducted rigorous Quality Assurance (QA) evaluations, root cause analysis (RCA), and error pattern identification to drive decision accuracy.</li>
+          <li>Partnered with cross-functional stakeholders to manage policy updates, calibration sessions, and service level agreement (SLA) metrics.</li>
+        </ul>
+      </div>
+    </section>
+
     <!-- Skills & Expertise Section -->
     <section class="card">
       <h2><i class="fa-solid fa-layer-group"></i> Skills & Expertise</h2>
       <div class="skills-grid">
         
-        <!-- Category 1 -->
         <div class="skill-category">
           <h3><i class="fa-solid fa-shield"></i> Trust & Safety & Policy Operations</h3>
           <ul class="skill-list">
@@ -330,7 +438,6 @@
           </ul>
         </div>
 
-        <!-- Category 2 -->
         <div class="skill-category">
           <h3><i class="fa-solid fa-graduation-cap"></i> Training & Learning Development</h3>
           <ul class="skill-list">
@@ -349,7 +456,6 @@
           </ul>
         </div>
 
-        <!-- Category 3 -->
         <div class="skill-category">
           <h3><i class="fa-solid fa-robot"></i> AI Moderation & Emerging Technology</h3>
           <ul class="skill-list">
@@ -366,7 +472,6 @@
           </ul>
         </div>
 
-        <!-- Category 4 -->
         <div class="skill-category">
           <h3><i class="fa-solid fa-chart-line"></i> Quality Assurance & Performance Improvement</h3>
           <ul class="skill-list">
@@ -385,7 +490,6 @@
           </ul>
         </div>
 
-        <!-- Category 5 -->
         <div class="skill-category">
           <h3><i class="fa-solid fa-users-gears"></i> Leadership & Stakeholder Collaboration</h3>
           <ul class="skill-list">
@@ -402,7 +506,6 @@
           </ul>
         </div>
 
-        <!-- Category 6 -->
         <div class="skill-category">
           <h3><i class="fa-solid fa-file-contract"></i> Risk, Compliance & Transferable Skills</h3>
           <ul class="skill-list">
@@ -419,7 +522,6 @@
           </ul>
         </div>
 
-        <!-- Category 7 -->
         <div class="skill-category">
           <h3><i class="fa-solid fa-laptop-code"></i> Tools & Reporting</h3>
           <ul class="skill-list">
@@ -459,7 +561,7 @@
   </main>
 
   <footer>
-    <p>© Trust & Safety Portfolio | Hosted on GitHub Pages</p>
+    <p>© 2026 Hemant Singh | Trust & Safety Portfolio</p>
   </footer>
 
 </body>
