@@ -1,234 +1,466 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hemant Singh | Senior Trust & Safety Specialist</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        primary: { 50: '#f0fdf4', 100: '#dcfce7', 500: '#22c55e', 600: '#16a34a', 700: '#15803d', 800: '#166534', 900: '#14532d' }
-                    }
-                }
-            }
-        }
-    </script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trust & Safety Professional Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #0f172a;
+      --primary-light: #1e293b;
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --text: #334155;
+      --text-light: #64748b;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --border: #e2e8f0;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* Banner & Header */
+    .hero-banner {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #1e3a8a 100%);
+      color: #ffffff;
+      padding: 4rem 2rem 5rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-banner::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(circle at 20% 50%, rgba(37, 99, 235, 0.15) 0%, transparent 50%),
+                  radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.1) 0%, transparent 40%);
+      pointer-events: none;
+    }
+
+    .banner-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(8px);
+      padding: 0.4rem 1rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #93c5fd;
+      margin-bottom: 1.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .hero-banner h1 {
+      font-size: 2.75rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.025em;
+    }
+
+    .hero-banner p {
+      font-size: 1.2rem;
+      color: #cbd5e1;
+      max-width: 650px;
+      margin: 0 auto;
+      font-weight: 300;
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 1.5rem 4rem 1.5rem;
+    }
+
+    /* Card Styling */
+    .card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+    }
+
+    .card-about {
+      margin-top: -3rem;
+      position: relative;
+      z-index: 10;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    h2 i {
+      color: var(--accent);
+      font-size: 1.25rem;
+    }
+
+    /* About Section */
+    .about-text p {
+      margin-bottom: 1.25rem;
+      color: #475569;
+      font-size: 1.025rem;
+    }
+
+    .about-text p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Skills Grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .skill-category {
+      background: #f8fafc;
+      padding: 1.5rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+
+    .skill-category h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .skill-category h3 i {
+      color: var(--accent);
+    }
+
+    .skill-list {
+      list-style: none;
+    }
+
+    .skill-list li {
+      position: relative;
+      padding-left: 1.25rem;
+      margin-bottom: 0.5rem;
+      font-size: 0.925rem;
+      color: var(--text);
+    }
+
+    .skill-list li::before {
+      content: "•";
+      color: var(--accent);
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+    }
+
+    /* Safety Mission Quote Box */
+    .mission-quote {
+      background: linear-gradient(to right, #1e293b, #0f172a);
+      color: #ffffff;
+      padding: 2.5rem;
+      border-radius: 12px;
+      text-align: center;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+
+    .mission-quote i.quote-icon {
+      font-size: 2rem;
+      color: rgba(59, 130, 246, 0.4);
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .mission-quote blockquote {
+      font-size: 1.15rem;
+      font-weight: 400;
+      line-height: 1.7;
+      color: #f1f5f9;
+      max-width: 800px;
+      margin: 0 auto;
+      font-style: italic;
+    }
+
+    /* Contact Section */
+    .contact-card {
+      text-align: center;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      font-size: 0.95rem;
+    }
+
+    .btn-primary {
+      background-color: var(--accent);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--accent-hover);
+    }
+
+    .btn-outline {
+      border: 1px solid var(--border);
+      color: var(--text);
+      background-color: white;
+    }
+
+    .btn-outline:hover {
+      background-color: var(--bg);
+      border-color: #cbd5e1;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 0;
+      color: var(--text-light);
+      font-size: 0.875rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero-banner h1 {
+        font-size: 2rem;
+      }
+      .card {
+        padding: 1.5rem;
+      }
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
-<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 antialiased transition-colors duration-300" x-data="{ darkMode: false, copied: false }" :class="{ 'dark': darkMode }">
+<body>
 
-    <!-- Header / Navigation Bar -->
-    <header class="sticky top-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <a href="#hero" class="font-bold text-lg tracking-tight flex items-center gap-2">
-                <span class="w-3 h-3 rounded-full bg-primary-600 animate-pulse"></span>
-                Hemant Singh
-            </a>
-            
-            <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
-                <a href="#about" class="hover:text-primary-600 dark:hover:text-primary-400 transition">About Me</a>
-                <a href="#experience" class="hover:text-primary-600 dark:hover:text-primary-400 transition">Experience</a>
-                <a href="#expertise" class="hover:text-primary-600 dark:hover:text-primary-400 transition">Expertise</a>
-                <a href="#skills" class="hover:text-primary-600 dark:hover:text-primary-400 transition">Skills</a>
-                <a href="#contact" class="hover:text-primary-600 dark:hover:text-primary-400 transition">Contact</a>
-            </nav>
+  <!-- Trust & Safety Banner -->
+  <header class="hero-banner">
+    <div class="banner-badge">
+      <i class="fa-solid fa-shield-halved"></i> Trust & Safety • Policy Operations • Platform Integrity
+    </div>
+    <h1>Trust & Safety Professional</h1>
+    <p>Senior Trainer & Operations Specialist with 8+ years of experience across Policy Operations, QA, AI Moderation Feedback, and Compliance.</p>
+  </header>
 
-            <div class="flex items-center gap-3">
-                <button @click="darkMode = !darkMode" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-primary-600 transition" aria-label="Toggle Theme">
-                    <i class="fas" :class="darkMode ? 'fa-sun' : 'fa-moon'"></i>
-                </button>
-                <a href="#contact" class="hidden sm:inline-flex items-center justify-center px-4 py-2 rounded-lg bg-primary-600 hover:bg-primary-700 text-white text-sm font-medium transition shadow-sm">
-                    Get in Touch
-                </a>
-            </div>
+  <main class="container">
+    
+    <!-- About Me Section -->
+    <section class="card card-about">
+      <h2><i class="fa-solid fa-user"></i> About Me</h2>
+      <div class="about-text">
+        <p>I’m a Trust & Safety professional with over 8 years of experience working across policy operations, quality assurance, learning and development, and cross-vendor collaboration within the digital platform industry.</p>
+        
+        <p>Over the years, my work has focused on helping teams understand and apply complex policies, improving decision-making quality, and supporting safer online environments. Working on projects associated with major technology platforms, including Google/YouTube, has given me practical insight into the challenges of content moderation, policy enforcement, and maintaining consistency across large-scale operations.</p>
+        
+        <p>In my current role as a Senior Trainer, I work at the intersection of policy, people, and performance. My experience includes delivering training across vendors, supporting quality improvement initiatives, contributing policy feedback for AI-assisted moderation, and translating complex policy requirements into practical guidance that teams can apply in real-world scenarios. I enjoy looking beyond individual decisions to understand the underlying gaps, identify opportunities for improvement, and build solutions that create a lasting impact.</p>
+        
+        <p>What interests me most about this field is how policy, human judgement, technology, and risk management come together. As digital platforms evolve and AI becomes increasingly integrated into moderation workflows, I believe there is a growing need for professionals who understand both the operational realities and the principles behind effective policy enforcement.</p>
+        
+        <p>Looking ahead, I’m interested in opportunities that allow me to build on my Trust & Safety background while expanding into areas such as policy strategy, platform governance, risk management, compliance, and AML/KYC. I’m particularly interested in applying my experience in risk identification, quality evaluation, decision-making, and process improvement to broader challenges across technology and financial services.</p>
+        
+        <p>I see my career as an ongoing learning journey. I’m open to new challenges, new industries, and opportunities that allow me to combine my existing experience with new knowledge and skills. My goal is to grow into roles where I can contribute not only to day-to-day operations, but also to stronger policies, better processes, and more effective risk management.</p>
+        
+        <p>This website is a space to share my professional journey, the work I’m interested in, and the opportunities I’m working towards. If you’re exploring opportunities in Trust & Safety, policy, risk, compliance, or related fields, I’d be happy to connect and exchange ideas.</p>
+      </div>
+    </section>
+
+    <!-- Skills & Expertise Section -->
+    <section class="card">
+      <h2><i class="fa-solid fa-layer-group"></i> Skills & Expertise</h2>
+      <div class="skills-grid">
+        
+        <!-- Category 1 -->
+        <div class="skill-category">
+          <h3><i class="fa-solid fa-shield"></i> Trust & Safety & Policy Operations</h3>
+          <ul class="skill-list">
+            <li>Policy Interpretation & Enforcement</li>
+            <li>Content Moderation & Safety Operations</li>
+            <li>Adult Content & Child Safety Policies</li>
+            <li>Context-Based Policy Decision-Making</li>
+            <li>Fact-Based Content Labelling</li>
+            <li>Policy Adjudication & Escalation Handling</li>
+            <li>Creator Appeals & Content Appeals Review</li>
+            <li>Complex Case Analysis & Policy Clarification</li>
+            <li>Tier-Based Workflow Management (Tier X / Specialized Workflows)</li>
+            <li>Policy Consistency & Decision Accuracy</li>
+            <li>User-Generated Content Risk Assessment</li>
+            <li>Platform Integrity & Online Safety</li>
+          </ul>
         </div>
-    </header>
 
-    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-24">
+        <!-- Category 2 -->
+        <div class="skill-category">
+          <h3><i class="fa-solid fa-graduation-cap"></i> Training & Learning Development</h3>
+          <ul class="skill-list">
+            <li>Trust & Safety Policy Training</li>
+            <li>New-Hire & Nesting Training Support</li>
+            <li>Refresher Training & Policy Updates</li>
+            <li>Advanced Workflow & Specialized Queue Training</li>
+            <li>Training Needs Analysis (TNA)</li>
+            <li>Training Gap Identification & Remediation</li>
+            <li>Training Material Development</li>
+            <li>Knowledge Transfer & Cross-Vendor Training</li>
+            <li>Facilitation & Knowledge Assessment</li>
+            <li>Learning Effectiveness Evaluation</li>
+            <li>Performance Coaching & Feedback</li>
+            <li>Training Calibration & Knowledge Alignment</li>
+          </ul>
+        </div>
 
-        <!-- Hero Section -->
-        <section id="hero" class="flex flex-col md:flex-row items-center gap-8 md:gap-12 pt-8">
-            <div class="w-40 h-40 md:w-52 md:h-52 rounded-full overflow-hidden border-4 border-primary-600 shadow-xl flex-shrink-0 bg-slate-200 dark:bg-slate-800">
-                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=500" alt="Hemant Singh" class="w-full h-full object-cover">
-            </div>
-            <div class="text-center md:text-left space-y-4">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-50 dark:bg-primary-950/50 border border-primary-200 dark:border-primary-800 text-primary-700 dark:text-primary-300 text-xs font-semibold uppercase tracking-wider">
-                    Trust & Safety Specialist
-                </div>
-                <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight">
-                    Hemant Singh
-                </h1>
-                <p class="text-lg sm:text-xl text-slate-600 dark:text-slate-400 font-medium">
-                    Senior Policy & Compliance Specialist with 8+ years in Trust & Safety Operations[cite: 1]
-                </p>
-                <div class="flex flex-wrap justify-center md:justify-start gap-4 text-sm text-slate-500 dark:text-slate-400">
-                    <span class="flex items-center gap-1.5"><i class="fas fa-map-marker-alt text-primary-600"></i> Kuala Lumpur, Malaysia[cite: 1]</span>
-                    <span class="flex items-center gap-1.5"><i class="fas fa-envelope text-primary-600"></i> Hemant.singh138@gmail.com[cite: 1]</span>
-                </div>
-                <div class="flex flex-wrap justify-center md:justify-start gap-3 pt-2">
-                    <a href="#contact" class="px-5 py-2.5 rounded-xl bg-primary-600 hover:bg-primary-700 text-white font-medium shadow-md transition">Contact Me</a>
-                    <a href="https://linkedin.com/in/hemantsingh138" target="_blank" class="px-5 py-2.5 rounded-xl bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 font-medium transition flex items-center gap-2">
-                        <i class="fab fa-linkedin text-blue-600"></i> LinkedIn Profile
-                    </a>
-                </div>
-            </div>
-        </section>
+        <!-- Category 3 -->
+        <div class="skill-category">
+          <h3><i class="fa-solid fa-robot"></i> AI Moderation & Emerging Technology</h3>
+          <ul class="skill-list">
+            <li>AI-Assisted Content Moderation Feedback</li>
+            <li>AI Moderation Output Evaluation</li>
+            <li>Human-in-the-Loop Moderation</li>
+            <li>Policy-Based Labelling & Annotation</li>
+            <li>Fact-Based Data Labelling</li>
+            <li>Model Error & Policy Misalignment Identification</li>
+            <li>Edge-Case Analysis & Contextual Judgement</li>
+            <li>AI Output Quality Evaluation</li>
+            <li>Human Judgement in Automated Decision-Making</li>
+            <li>Policy Feedback for Model Improvement</li>
+          </ul>
+        </div>
 
-        <!-- About Me Section -->
-        <section id="about" class="space-y-6">
-            <div class="border-b border-slate-200 dark:border-slate-800 pb-4">
-                <h2 class="text-2xl font-bold flex items-center gap-2 text-slate-900 dark:text-white">
-                    <i class="fas fa-user-shield text-primary-600"></i> About Me
-                </h2>
-            </div>
-            <div class="bg-white dark:bg-slate-900 p-6 sm:p-8 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm leading-relaxed text-slate-600 dark:text-slate-300 space-y-4">
-                <p>
-                    Senior Trust & Safety Policy professional with <strong>8+ years of experience</strong> in policy operations, quality assurance, training, and cross-vendor collaboration[cite: 1]. Experienced in providing critical policy feedback for AI moderation, delivering multi-vendor training, and translating complex safety policies into practical operational guidance[cite: 1].
-                </p>
-                <p>
-                    Currently exploring opportunities across Trust & Safety, Policy, Risk, Compliance, and AML/KYC, with a strong focus on transitioning transferable risk mitigation skills into financial services and scalable operations[cite: 1].
-                </p>
-            </div>
-        </section>
+        <!-- Category 4 -->
+        <div class="skill-category">
+          <h3><i class="fa-solid fa-chart-line"></i> Quality Assurance & Performance Improvement</h3>
+          <ul class="skill-list">
+            <li>Quality Assurance (QA)</li>
+            <li>Quality Trend Analysis</li>
+            <li>Root Cause Analysis (RCA)</li>
+            <li>5 Whys & Fishbone Analysis</li>
+            <li>Quality Improvement Action Plans</li>
+            <li>Error Pattern Identification</li>
+            <li>Calibration & Quality Alignment</li>
+            <li>Training Effectiveness Measurement</li>
+            <li>Performance Gap Analysis</li>
+            <li>Corrective & Preventive Actions</li>
+            <li>KPI Monitoring & Performance Reporting</li>
+            <li>Service Level Agreement (SLA) Monitoring</li>
+          </ul>
+        </div>
 
-        <!-- Experience Section -->
-        <section id="experience" class="space-y-6">
-            <div class="border-b border-slate-200 dark:border-slate-800 pb-4">
-                <h2 class="text-2xl font-bold flex items-center gap-2 text-slate-900 dark:text-white">
-                    <i class="fas fa-briefcase text-primary-600"></i> Experience
-                </h2>
-            </div>
-            <div class="space-y-6">
-                <!-- Job 1 -->
-                <div class="bg-white dark:bg-slate-900 p-6 sm:p-8 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-4">
-                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                        <div>
-                            <h3 class="text-lg font-bold text-slate-900 dark:text-white">Senior Trust & Safety Policy & Compliance Specialist[cite: 1]</h3>
-                            <p class="text-primary-600 dark:text-primary-400 font-medium text-sm">Concentrix Malaysia[cite: 1]</p>
-                        </div>
-                        <span class="inline-block px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs font-semibold w-max">07/2023 – Present[cite: 1]</span>
-                    </div>
-                    <ul class="list-disc list-inside space-y-2 text-sm text-slate-600 dark:text-slate-300">
-                        <li>Lead policy capability and quality initiatives for a <strong>280+ HC Trust & Safety operation</strong> covering image, video, and text moderation workflows[cite: 1].</li>
-                        <li>Drive targeted coaching and upskilling interventions based on quality trends, policy gaps, and Root Cause Analysis (RCA), contributing to a <strong>10% quality improvement</strong> within one quarter[cite: 1].</li>
-                        <li>Provide policy and workflow feedback for AI moderation, identifying operational gaps and recommending improvements[cite: 1].</li>
-                        <li>Deliver cross-vendor policy alignment and knowledge-sharing initiatives to strengthen consistency in execution[cite: 1].</li>
-                        <li>Optimized training assessments and readiness processes, achieving <strong>99% training throughput</strong> while minimizing repeat assessments[cite: 1].</li>
-                    </ul>
-                </div>
+        <!-- Category 5 -->
+        <div class="skill-category">
+          <h3><i class="fa-solid fa-users-gears"></i> Leadership & Stakeholder Collaboration</h3>
+          <ul class="skill-list">
+            <li>Stakeholder Management</li>
+            <li>Cross-Vendor Training Coordination</li>
+            <li>Client & Business Reviews</li>
+            <li>Cross-Functional Collaboration</li>
+            <li>Knowledge Sharing & Best Practice Development</li>
+            <li>Operational Process Improvement</li>
+            <li>Training Delivery Planning</li>
+            <li>Change Management & Policy Rollouts</li>
+            <li>Team Capability Development</li>
+            <li>Data-Driven Decision Support</li>
+          </ul>
+        </div>
 
-                <!-- Job 2 -->
-                <div class="bg-white dark:bg-slate-900 p-6 sm:p-8 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-4">
-                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                        <div>
-                            <h3 class="text-lg font-bold text-slate-900 dark:text-white">Content Reviewer[cite: 1]</h3>
-                            <p class="text-primary-600 dark:text-primary-400 font-medium text-sm">Concentrix Malaysia[cite: 1]</p>
-                        </div>
-                        <span class="inline-block px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs font-semibold w-max">01/2022 – 06/2023[cite: 1]</span>
-                    </div>
-                    <ul class="list-disc list-inside space-y-2 text-sm text-slate-600 dark:text-slate-300">
-                        <li>Reviewed sensitive and complex YouTube content for community safety, flagging policy violations accurately[cite: 1].</li>
-                        <li>Flagged edge cases and updated training materials for new policy releases[cite: 1].</li>
-                        <li>Maintained <strong>>99% quality score consistently</strong> while managing high-volume queues[cite: 1].</li>
-                    </ul>
-                </div>
+        <!-- Category 6 -->
+        <div class="skill-category">
+          <h3><i class="fa-solid fa-file-contract"></i> Risk, Compliance & Transferable Skills</h3>
+          <ul class="skill-list">
+            <li>Risk Identification & Mitigation</li>
+            <li>Policy Compliance Monitoring</li>
+            <li>Process Governance</li>
+            <li>Evidence-Based Decision-Making</li>
+            <li>Risk-Based Case Assessment</li>
+            <li>Audit Readiness & Documentation</li>
+            <li>Control Effectiveness Awareness</li>
+            <li>Compliance Training & Knowledge Sharing</li>
+            <li>Process Standardization</li>
+            <li>Continuous Improvement</li>
+          </ul>
+        </div>
 
-                <!-- Job 3 -->
-                <div class="bg-white dark:bg-slate-900 p-6 sm:p-8 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-4">
-                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                        <div>
-                            <h3 class="text-lg font-bold text-slate-900 dark:text-white">Content Reviewer[cite: 2]</h3>
-                            <p class="text-primary-600 dark:text-primary-400 font-medium text-sm">ByteDance India Pvt Ltd.[cite: 2]</p>
-                        </div>
-                        <span class="inline-block px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs font-semibold w-max">06/2020 – 12/2021[cite: 2]</span>
-                    </div>
-                    <ul class="list-disc list-inside space-y-2 text-sm text-slate-600 dark:text-slate-300">
-                        <li>Evaluated TikTok videos based on evolving guidelines to ensure platform safety and compliance[cite: 2].</li>
-                        <li>Conducted peer coaching and shadowing sessions for new hires[cite: 2].</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+        <!-- Category 7 -->
+        <div class="skill-category">
+          <h3><i class="fa-solid fa-laptop-code"></i> Tools & Reporting</h3>
+          <ul class="skill-list">
+            <li>Google Workspace</li>
+            <li>Google Sheets & Spreadsheet Reporting</li>
+            <li>Quality and Performance Dashboards</li>
+            <li>KPI & SLA Reporting</li>
+            <li>Training Assessment Tracking</li>
+            <li>Data Interpretation & Trend Reporting</li>
+            <li>Microsoft Excel</li>
+            <li>Presentation & Training Documentation</li>
+          </ul>
+        </div>
 
-        <!-- Expertise & Skills Section -->
-        <section id="expertise" class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <!-- Expertise -->
-            <div class="space-y-6">
-                <div class="border-b border-slate-200 dark:border-slate-800 pb-4">
-                    <h2 class="text-2xl font-bold flex items-center gap-2 text-slate-900 dark:text-white">
-                        <i class="fas fa-bullseye text-primary-600"></i> Expertise
-                    </h2>
-                </div>
-                <div class="bg-white dark:bg-slate-900 p-6 sm:p-8 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-3">
-                    <div class="flex items-center gap-3 p-3 rounded-xl bg-slate-50 dark:bg-slate-800/50">
-                        <i class="fas fa-check-circle text-primary-600"></i>
-                        <span class="text-sm font-semibold">Policy Interpretation & Compliance[cite: 2]</span>
-                    </div>
-                    <div class="flex items-center gap-3 p-3 rounded-xl bg-slate-50 dark:bg-slate-800/50">
-                        <i class="fas fa-check-circle text-primary-600"></i>
-                        <span class="text-sm font-semibold">Risk Assessment & Mitigation[cite: 2]</span>
-                    </div>
-                    <div class="flex items-center gap-3 p-3 rounded-xl bg-slate-50 dark:bg-slate-800/50">
-                        <i class="fas fa-check-circle text-primary-600"></i>
-                        <span class="text-sm font-semibold">Root Cause Analysis (RCA Tools)[cite: 2]</span>
-                    </div>
-                    <div class="flex items-center gap-3 p-3 rounded-xl bg-slate-50 dark:bg-slate-800/50">
-                        <i class="fas fa-check-circle text-primary-600"></i>
-                        <span class="text-sm font-semibold">Stakeholder & Cross-Vendor Management[cite: 2]</span>
-                    </div>
-                </div>
-            </div>
+      </div>
+    </section>
 
-            <!-- Skills -->
-            <div id="skills" class="space-y-6">
-                <div class="border-b border-slate-200 dark:border-slate-800 pb-4">
-                    <h2 class="text-2xl font-bold flex items-center gap-2 text-slate-900 dark:text-white">
-                        <i class="fas fa-tools text-primary-600"></i> Skills & Tools
-                    </h2>
-                </div>
-                <div class="bg-white dark:bg-slate-900 p-6 sm:p-8 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-wrap gap-2">
-                    <span class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-medium">Quality Assurance[cite: 2]</span>
-                    <span class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-medium">Training Needs Analysis[cite: 2]</span>
-                    <span class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-medium">5 Whys & Fishbone RCA[cite: 2]</span>
-                    <span class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-medium">Google Workspace[cite: 2]</span>
-                    <span class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-medium">Data Dashboards & SLAs[cite: 2]</span>
-                </div>
-            </div>
-        </section>
+    <!-- Safety Mission Statement / Quote -->
+    <section class="mission-quote">
+      <i class="fa-solid fa-quote-left quote-icon"></i>
+      <blockquote>
+        "Safeguarding the digital ecosystem is a shared responsibility. By actively identifying risks, addressing policy violations, and championing accountability, we can build a safer, more resilient internet for everyone."
+      </blockquote>
+    </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="space-y-6 pb-12">
-            <div class="border-b border-slate-200 dark:border-slate-800 pb-4">
-                <h2 class="text-2xl font-bold flex items-center gap-2 text-slate-900 dark:text-white">
-                    <i class="fas fa-paper-plane text-primary-600"></i> Contact Me
-                </h2>
-            </div>
-            <div class="bg-white dark:bg-slate-900 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm text-center max-w-2xl mx-auto space-y-6">
-                <p class="text-slate-600 dark:text-slate-400">
-                    I am actively open to new opportunities in Trust & Safety, Compliance, and Risk Management[cite: 1]. Feel free to reach out via email or connect with me on LinkedIn.
-                </p>
-                <div class="flex flex-wrap justify-center gap-4">
-                    <a href="mailto:Hemant.singh138@gmail.com" class="px-6 py-3 rounded-xl bg-primary-600 hover:bg-primary-700 text-white font-medium transition shadow-md flex items-center gap-2">
-                        <i class="fas fa-envelope"></i> Send Email
-                    </a>
-                    <a href="https://linkedin.com/in/hemantsingh138" target="_blank" class="px-6 py-3 rounded-xl bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 font-medium transition flex items-center gap-2">
-                        <i class="fab fa-linkedin text-blue-600"></i> LinkedIn Profile
-                    </a>
-                </div>
-            </div>
-        </section>
+    <!-- Contact Section -->
+    <section class="card contact-card">
+      <h2><i class="fa-solid fa-paper-plane"></i> Let's Connect</h2>
+      <p>I am always interested in discussing Trust & Safety, policy operations, governance, and compliance. Feel free to connect or reach out!</p>
+      <div class="contact-links">
+        <a href="https://linkedin.com" target="_blank" class="btn btn-primary">
+          <i class="fa-brands fa-linkedin"></i> Connect on LinkedIn
+        </a>
+      </div>
+    </section>
 
-    </main>
+  </main>
 
-    <!-- Footer -->
-    <footer class="border-t border-slate-200 dark:border-slate-800 py-8 text-center text-sm text-slate-500">
-        <p>&copy; 2026 Hemant Singh. Built for Trust & Safety Leadership.</p>
-    </footer>
+  <footer>
+    <p>© Trust & Safety Portfolio | Hosted on GitHub Pages</p>
+  </footer>
 
 </body>
 </html>
